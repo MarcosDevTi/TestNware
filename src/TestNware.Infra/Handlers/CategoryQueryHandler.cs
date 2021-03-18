@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TestNware.Domain.Commands;
 using TestNware.Domain.Contracts;
 using TestNware.Domain.Models;
 using TestNware.Domain.Pagination;
@@ -13,7 +14,7 @@ using TestNware.Infra.Extensions;
 namespace TestNware.Infra.Handlers
 {
     public class CategoryQueryHandler :
-        IQueryHandler<GetCategoryForEdition, CategoryForEdition>,
+        IQueryHandler<GetCategoryForEdition, EditCategory>,
         IQueryHandler<GetCategories, PagedResult<Category>>,
         IQueryHandler<GetPostByCategory, IEnumerable<Post>>,
         IQueryHandler<GetCategory, Category>,
@@ -25,10 +26,10 @@ namespace TestNware.Infra.Handlers
         {
             _context = context;
         }
-        public async Task<CategoryForEdition> Handle(GetCategoryForEdition query)
+        public async Task<EditCategory> Handle(GetCategoryForEdition query)
         {
             var categoryData = await _context.Categories.FindAsync(query.Id);
-            return new CategoryForEdition
+            return new EditCategory
             {
                 Id = categoryData.Id,
                 Title = categoryData.Title
