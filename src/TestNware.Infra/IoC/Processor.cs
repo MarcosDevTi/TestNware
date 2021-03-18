@@ -13,10 +13,16 @@ namespace TestNware.Infra.IoC
             GetHandle(typeof(IQueryHandler<,>), query.GetType(), typeof(TResult))
                 .Handle((dynamic)query);
 
-#pragma warning disable CS1998 // Cette méthode async n'a pas d'opérateur 'await' et elle s'exécutera de façon synchrone
-        public async Task Send<TCommand>(TCommand command) where TCommand : ICommand =>
-#pragma warning restore CS1998 // Cette méthode async n'a pas d'opérateur 'await' et elle s'exécutera de façon synchrone
+        public void Send<TCommand>(TCommand command) where TCommand : ICommand
+        {
             GetHandle(typeof(ICommandHandler<>), command.GetType())
+                .Handle((dynamic)command);
+        }
+
+#pragma warning disable CS1998 // Cette méthode async n'a pas d'opérateur 'await' et elle s'exécutera de façon synchrone
+        public async Task SendAsync<TCommand>(TCommand command) where TCommand : ICommand =>
+#pragma warning restore CS1998 // Cette méthode async n'a pas d'opérateur 'await' et elle s'exécutera de façon synchrone
+            GetHandle(typeof(ICommandHandlerAsync<>), command.GetType())
                 .Handle((dynamic)command);
 
         private dynamic GetHandle(Type handle, params Type[] types) =>

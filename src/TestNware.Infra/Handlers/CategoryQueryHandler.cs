@@ -16,7 +16,8 @@ namespace TestNware.Infra.Handlers
         IQueryHandler<GetCategoryForEdition, CategoryForEdition>,
         IQueryHandler<GetCategories, PagedResult<Category>>,
         IQueryHandler<GetPostByCategory, IEnumerable<Post>>,
-        IQueryHandler<GetCategory, Category>
+        IQueryHandler<GetCategory, Category>,
+        IQueryHandler<GetCategoriesForDropdownList, IEnumerable<CategoryItem>>
     {
         private readonly NWareContext _context;
 
@@ -55,6 +56,18 @@ namespace TestNware.Infra.Handlers
         public async Task<Category> Handle(GetCategory query)
         {
             return await _context.Categories.FindAsync(query.Id);
+        }
+
+        public async Task<IEnumerable<CategoryItem>> Handle(GetCategoriesForDropdownList query)
+        {
+            return await _context.Categories
+                .OrderBy(c => c.Title)
+                .Select(c =>
+                            new CategoryItem
+                            {
+                                Id = c.Id,
+                                Title = c.Title
+                            }).ToListAsync();
         }
     }
 }

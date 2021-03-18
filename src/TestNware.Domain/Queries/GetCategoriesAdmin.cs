@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TestNware.Domain.Contracts;
+﻿using TestNware.Domain.Contracts;
 using TestNware.Domain.Models;
 using TestNware.Domain.Pagination;
 

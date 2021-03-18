@@ -29,9 +29,13 @@ namespace TestNware.Infra.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Title")
+                        .IsUnique();
 
                     b.ToTable("Categories");
                 });
@@ -46,6 +50,7 @@ namespace TestNware.Infra.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Content")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedDate")
@@ -55,11 +60,15 @@ namespace TestNware.Infra.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("Title")
+                        .IsUnique();
 
                     b.ToTable("Posts");
                 });

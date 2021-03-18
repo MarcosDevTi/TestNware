@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
+using TestNware.API.Controllers;
 using TestNware.Domain.Contracts;
 using TestNware.Domain.Queries;
 
@@ -9,35 +9,16 @@ namespace TestNware.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostsController : Controller
+    public class PostsController : BaseController
     {
-        private readonly IProcessor _processor;
-
-        public PostsController(IProcessor processor)
-        {
-            _processor = processor;
-        }
+        public PostsController(IProcessor processor) : base(processor) { }
 
         [HttpGet]
-        public async Task<IActionResult> GetAsync([FromQuery] GetPosts posts)
-        {
-            var result = await _processor.Get(posts);
+        public async Task<IActionResult> GetAsync([FromQuery] GetPosts posts) =>
+            await GetListResultPaged(posts);
 
-            if (result.Items.Any())
-                return Ok(result);
-            return NoContent();
-        }
-
-        [Route("{id:guid}")]
-        [HttpGet]
-        public async Task<IActionResult> Get(Guid id)
-        {
-            var result = await _processor.Get(new GetPost(id));
-            if (result is null)
-                return NotFound(result);
-            return Ok(result);
-        }
-
-
+        [HttpGet, Route("{id:guid}")]
+        public async Task<IActionResult> Get(Guid id) =>
+            await GetFirst(new GetPost(id));
     }
 }

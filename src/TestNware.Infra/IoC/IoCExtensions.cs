@@ -14,7 +14,7 @@ namespace TestNware.Infra.IoC
 
         public static void AddCqrs<T>(this IServiceCollection services, Func<AssemblyName, bool> filter = null)
         {
-            var handlers = new[] { typeof(ICommandHandler<>), typeof(IQueryHandler<,>) };
+            var handlers = new[] { typeof(ICommandHandlerAsync<>), typeof(ICommandHandler<>), typeof(IQueryHandler<,>) };
 
             static bool FilterTrue(AssemblyName a) => true;
             var target = typeof(T).Assembly;

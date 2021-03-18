@@ -10,6 +10,10 @@ namespace TestNware.Infra.Data.Mappings
         {
             builder.Property(p => p.Id).HasColumnType("uuid")
                 .IsRequired();
+
+            builder.Property(p => p.Title).IsRequired();
+
+            builder.HasIndex(p => p.Title).IsUnique();
         }
     }
 }

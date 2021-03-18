@@ -1,0 +1,59 @@
+﻿@model TestNware.Domain.Commands.EditPost
+
+@{
+    ViewData["Title"] = "Blog - Edit Post";
+}
+
+<div class="row card">
+    <div class="card-body">
+        <h1 class="mb-5">Edit Post</h1>
+        <form id="create-post-form" asp-action="Edit" class="mb-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Id" hidden class="form-control" />
+            <div class="form-group row mb-4">
+                <label asp-for="Title" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-4">
+                <label asp-for="CategoryId" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <select asp-for="CategoryId" class="form-control"
+                            asp-items="@(new SelectList(Model.Categories, "Id", "Title"))">
+                        <option></option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-4">
+                <label asp-for="PublicationDate" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="PublicationDate" class="form-control" />
+                    <span asp-validation-for="PublicationDate" class="text-danger"></span>
+                </div>
+            </div>
+
+            <label asp-for="Content" class="control-label"></label>
+            <div id="text-quill">
+                @Html.HiddenFor(model => model.Content)
+                <div id="Tekst" name="Tekst">@Html.Raw(Model.Content)</div>
+            </div>
+            <div id="texteErreur"></div>
+
+            <span asp-validation-for="Content" class="text-danger"></span>
+
+            <div class="form-group mt-4">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            <a asp-action="Index" asp-controller="Home">Back to List</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartialWithQuill");}
+}

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TestNware.Domain.DomainNotification;
 using TestNware.Infra.Data;
 
 namespace TestNware.Infra.IoC
@@ -11,6 +12,7 @@ namespace TestNware.Infra.IoC
         {
             services.AddCqrs();
             services.AddDbContext<NWareContext>(conn => conn.UseNpgsql(config.GetConnectionString("NpgsqlConnection")));
+            services.AddScoped<INotificationContext, NotificationContext>();
         }
     }
 }

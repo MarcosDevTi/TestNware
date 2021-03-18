@@ -1,31 +1,58 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
 using TestNware.Domain.Commands;
 using TestNware.Domain.Contracts;
+using TestNware.Domain.DomainNotification;
 using TestNware.Domain.Models;
 using TestNware.Infra.Data;
 
 namespace TestNware.Infra.Handlers
 {
     public class CategoryCommandHandler :
-        ICommandHandler<CreateCategory>
-
+        ICommandHandler<CreateCategory>,
+        ICommandHandler<EditCategory>
     {
         private readonly NWareContext _context;
-
-        public CategoryCommandHandler(NWareContext context)
+        private readonly INotificationContext _notificationContext;
+        public CategoryCommandHandler(NWareContext context, INotificationContext notificationContext)
         {
             _context = context;
+            _notificationContext = notificationContext;
         }
 
-        public async Task Handle(CreateCategory command)
+        public void Handle(CreateCategory command)
         {
+            if (_context.Categories.Any(c => c.Title == command.Title))
+            {
+
+                _notificationContext.AddNotification(nameof(CreateCategory.Title), $"The {nameof(CreateCategory.Title)} '{command.Title}' already exists");
+                return;
+            }
             var newCategory = new Category
             {
                 Title = command.Title
             };
 
-            await _context.AddAsync(newCategory);
-            await _context.SaveChangesAsync();
+            _context.Add(newCategory);
+            _context.SaveChanges();
+        }
+
+        public void Handle(EditCategory command)
+        {
+            if (_context.Categories.Any(c => c.Title == command.Title && c.Id != command.Id))
+            {
+
+                _notificationContext.AddNotification(nameof(CreateCategory.Title), $"The {nameof(CreateCategory.Title)} '{command.Title}' already exists");
+                return;
+            }
+
+            var updateCategory = new Category
+            {
+                Id = command.Id,
+                Title = command.Title
+            };
+
+            _context.Update(updateCategory);
+            _context.SaveChanges();
         }
     }
 }

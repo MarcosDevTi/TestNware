@@ -34,7 +34,8 @@ namespace TestNware.Infra.Handlers
                 Id = post.Id,
                 Title = post.Title,
                 Content = post.Content,
-                CategoryId = post.Category.Id
+                CategoryId = post.Category.Id,
+                PublicationDate = post.PublicationDate
             };
         }
 

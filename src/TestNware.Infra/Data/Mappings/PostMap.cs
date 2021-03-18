@@ -8,11 +8,17 @@ namespace TestNware.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Post> builder)
         {
-            builder.Property(p => p.Id).HasColumnType("uuid")
-                //.HasDefaultValueSql("uuid_generate_v4()")
-                .IsRequired();
+            builder.Property(p => p.Id).HasColumnType("uuid").IsRequired();
 
-           // builder.Property(p => p.PublicationDate).HasColumnType("datetime");
+            builder.Property(p => p.Title).IsRequired();
+
+            builder.Property(p => p.PublicationDate).IsRequired();
+
+            builder.Property(p => p.CategoryId).IsRequired();
+
+            builder.Property(p => p.Content).IsRequired();
+
+            builder.HasIndex(p => p.Title).IsUnique();
         }
     }
 }
