@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using TestNware.Domain.Commands;
 using TestNware.Domain.Contracts;
 using TestNware.Domain.DomainNotification;
@@ -35,6 +36,7 @@ namespace TestNware.Infra.Handlers
                 Content = command.Content,
                 PublicationDate = command.PublicationDate.Value,
                 Category = category,
+                CreatedDate = DateTime.Now
             };
 
             _context.Add(newPost);

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using TestNware.Domain.Commands;
 using TestNware.Domain.Contracts;
 using TestNware.Domain.DomainNotification;
@@ -29,7 +30,8 @@ namespace TestNware.Infra.Handlers
             }
             var newCategory = new Category
             {
-                Title = command.Title
+                Title = command.Title,
+                CreatedDate = DateTime.Now
             };
 
             _context.Add(newCategory);
