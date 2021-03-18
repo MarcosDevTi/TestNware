@@ -21,7 +21,7 @@ namespace TestNware.Infra.Handlers
 
         public async Task<PagedResult<PostItemAdmin>> Handle(GetPostsAdmin query)
         {
-            var postsAdmin = await _context.Posts
+            var postsAdmin = await _context.Posts.OrderByDescending(p => p.CreatedDate)
                .Skip(query.Skip.Value)
                .Take(query.Top.Value)
                .Select(p => new PostItemAdmin

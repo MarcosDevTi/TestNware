@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestNware.MVC", "src\TestNware.MVC\TestNware.MVC.csproj", "{CEF1FAFE-2DED-4933-926E-29936CE19E4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestNware.Domain", "src\TestNware.Domain\TestNware.Domain.csproj", "{25658467-3C88-4E63-B62E-ABC197731924}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestNware.API", "src\TestNware.API\TestNware.API.csproj", "{05F5187B-57E5-449F-947D-BE8303EB77D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestNware.Infra", "src\TestNware.Infra\TestNware.Infra.csproj", "{AFC1B364-A007-4778-955E-0850ED0042C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNware.Domain", "src\TestNware.Domain\TestNware.Domain.csproj", "{25658467-3C88-4E63-B62E-ABC197731924}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestNware.NetCoreMvc", "src\TestNware.NetCoreMvc\TestNware.NetCoreMvc.csproj", "{DFB1691B-4098-4790-AA3F-B5ADDFBD1E73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNware.Infra", "src\TestNware.Infra\TestNware.Infra.csproj", "{AFC1B364-A007-4778-955E-0850ED0042C0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - UI", "1 - UI", "{65E7EBB7-4D76-4FCF-A977-182BFF070773}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{A1EAD1CA-1052-4808-80A6-0A8DCC9DE9F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{9E4FEBC4-F80F-4C08-A745-46383B4540AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNware.NetCoreApi", "src\TestNware.NetCoreApi\TestNware.NetCoreApi.csproj", "{C6187929-1EA2-433C-99E0-53C53B6EFE40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CEF1FAFE-2DED-4933-926E-29936CE19E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEF1FAFE-2DED-4933-926E-29936CE19E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEF1FAFE-2DED-4933-926E-29936CE19E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEF1FAFE-2DED-4933-926E-29936CE19E4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05F5187B-57E5-449F-947D-BE8303EB77D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05F5187B-57E5-449F-947D-BE8303EB77D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05F5187B-57E5-449F-947D-BE8303EB77D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05F5187B-57E5-449F-947D-BE8303EB77D1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{25658467-3C88-4E63-B62E-ABC197731924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{25658467-3C88-4E63-B62E-ABC197731924}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25658467-3C88-4E63-B62E-ABC197731924}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,9 +31,23 @@ Global
 		{AFC1B364-A007-4778-955E-0850ED0042C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFC1B364-A007-4778-955E-0850ED0042C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFC1B364-A007-4778-955E-0850ED0042C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB1691B-4098-4790-AA3F-B5ADDFBD1E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB1691B-4098-4790-AA3F-B5ADDFBD1E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB1691B-4098-4790-AA3F-B5ADDFBD1E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB1691B-4098-4790-AA3F-B5ADDFBD1E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6187929-1EA2-433C-99E0-53C53B6EFE40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6187929-1EA2-433C-99E0-53C53B6EFE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6187929-1EA2-433C-99E0-53C53B6EFE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6187929-1EA2-433C-99E0-53C53B6EFE40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25658467-3C88-4E63-B62E-ABC197731924} = {A1EAD1CA-1052-4808-80A6-0A8DCC9DE9F7}
+		{AFC1B364-A007-4778-955E-0850ED0042C0} = {9E4FEBC4-F80F-4C08-A745-46383B4540AC}
+		{DFB1691B-4098-4790-AA3F-B5ADDFBD1E73} = {65E7EBB7-4D76-4FCF-A977-182BFF070773}
+		{C6187929-1EA2-433C-99E0-53C53B6EFE40} = {65E7EBB7-4D76-4FCF-A977-182BFF070773}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A4172F3-D515-469E-9DAE-E09CA9281D74}

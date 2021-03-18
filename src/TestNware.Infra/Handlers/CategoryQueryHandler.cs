@@ -38,7 +38,8 @@ namespace TestNware.Infra.Handlers
 
         public async Task<PagedResult<Category>> Handle(GetCategories query)
         {
-            return await _context.Categories
+
+            return await _context.Categories.OrderByDescending(c => c.CreatedDate)
                    .GetPagedResult(
                       new Paging<Category>
                       {

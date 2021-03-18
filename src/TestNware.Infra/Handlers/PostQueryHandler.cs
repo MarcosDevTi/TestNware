@@ -48,8 +48,8 @@ namespace TestNware.Infra.Handlers
                     .GetPagedResult(
                        new Paging<Post>
                        {
-                           Skip = query.Skip.Value,
-                           Top = query.Top.Value
+                           Skip = query.Skip,
+                           Top = query.Top
                        });
         }
 

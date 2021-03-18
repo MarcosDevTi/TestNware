@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\jquery.mask.min.js" />
+    <Content Remove="wwwroot\js\quill-config.js" />
+    <Content Remove="wwwroot\js\site.js" />
+    <Content Remove="wwwroot\js\site.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\jquery.mask.min.js" />
+    <None Include="wwwroot\js\quill-config.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\js\site.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\js\site.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestNware.Domain\TestNware.Domain.csproj" />
+    <ProjectReference Include="..\TestNware.Infra\TestNware.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

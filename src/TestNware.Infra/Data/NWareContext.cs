@@ -7,10 +7,7 @@ namespace TestNware.Infra.Data
     public class NWareContext : DbContext
     {
         public NWareContext(DbContextOptions<NWareContext> options)
-            : base(options)
-        {
-
-        }
+            : base(options) { }
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<Category> Categories { get; set; }

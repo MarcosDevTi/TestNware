@@ -10,8 +10,8 @@
             Top = top;
         }
 
-        public int Skip { get; set; }
+        public int? Skip { get; set; }
 
-        public int Top { get; set; }
+        public int? Top { get; set; }
     }
 }

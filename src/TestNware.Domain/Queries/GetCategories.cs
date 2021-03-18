@@ -6,8 +6,8 @@ namespace TestNware.Domain.Queries
 {
     public class GetCategories : IQuery<PagedResult<Category>>
     {
-        public int Skip { get; set; }
+        public int? Skip { get; set; }
 
-        public int Top { get; set; }
+        public int? Top { get; set; }
     }
 }

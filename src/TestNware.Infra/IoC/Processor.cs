@@ -19,9 +19,10 @@ namespace TestNware.Infra.IoC
                 .Handle((dynamic)command);
         }
 
-#pragma warning disable CS1998 // Cette méthode async n'a pas d'opérateur 'await' et elle s'exécutera de façon synchrone
+
         public async Task SendAsync<TCommand>(TCommand command) where TCommand : ICommand =>
-#pragma warning restore CS1998 // Cette méthode async n'a pas d'opérateur 'await' et elle s'exécutera de façon synchrone
+
+            
             GetHandle(typeof(ICommandHandlerAsync<>), command.GetType())
                 .Handle((dynamic)command);
 
