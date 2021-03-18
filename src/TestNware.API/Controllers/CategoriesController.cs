@@ -9,7 +9,7 @@ namespace TestNware.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class CategoriesController : Controller
     {
         private readonly IProcessor _processor;
 
@@ -22,7 +22,7 @@ namespace TestNware.Controllers
         public async Task<IActionResult> GetCategories([FromQuery] GetCategories categories)
         {
             var result = await _processor.Get(categories);
-            
+
             if (result.Items.Any())
                 return Ok(result);
             return NoContent();
@@ -33,7 +33,7 @@ namespace TestNware.Controllers
         public async Task<IActionResult> GetCategory(Guid id)
         {
             var result = await _processor.Get(new GetCategory(id));
-            
+
             if (result is null)
                 return NotFound(result);
             return Ok(result);
@@ -44,7 +44,7 @@ namespace TestNware.Controllers
         public async Task<IActionResult> GetPosts(Guid id)
         {
             var result = await _processor.Get(new GetPostByCategory(id));
-            
+
             if (result.Any())
                 return Ok(result);
             return NoContent();

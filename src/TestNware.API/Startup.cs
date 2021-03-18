@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TestNware.Infra.IoC;
 using TestNware.Configuration;
 using TestNware.Helpers;
+using TestNware.Infra.IoC;
 
 namespace TestNware
 {
@@ -42,15 +42,10 @@ namespace TestNware
             app.UseRouting();
 
             app.UseMiddleware<CorsMiddleware>();
-            // app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                //endpoints.MapGet("/", async context =>
-                //{
-                //    await context.Response.di("/swagger/index.html");
-                //});
             });
 
             app.UseSwaggerConfiguration();

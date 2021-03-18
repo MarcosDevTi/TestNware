@@ -8,7 +8,7 @@ namespace TestNware.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminController : ControllerBase
+    public class AdminController : Controller
     {
         private readonly IProcessor _processor;
 
