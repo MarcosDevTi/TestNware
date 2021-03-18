@@ -32,7 +32,7 @@ namespace TestNware.API.Controllers
             return NoContent();
         }
 
-        public async Task<IActionResult> GetFirst<T>(IQuery<T> query)
+        public async Task<IActionResult> GetFirstOrNotFound<T>(IQuery<T> query)
         {
             var result = await _processor.Get(query);
 

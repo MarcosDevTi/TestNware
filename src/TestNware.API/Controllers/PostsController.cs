@@ -19,6 +19,6 @@ namespace TestNware.Controllers
 
         [HttpGet, Route("{id:guid}")]
         public async Task<IActionResult> Get(Guid id) =>
-            await GetFirst(new GetPost(id));
+            await GetFirstOrNotFound(new GetPost(id));
     }
 }
