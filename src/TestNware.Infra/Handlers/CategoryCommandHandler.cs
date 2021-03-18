@@ -47,13 +47,11 @@ namespace TestNware.Infra.Handlers
                 return;
             }
 
-            var updateCategory = new Category
-            {
-                Id = command.Id,
-                Title = command.Title
-            };
+            var updateCategory = _context.Categories.Find(command.Id);
 
-            _context.Update(updateCategory);
+            updateCategory.Id = command.Id;
+            updateCategory.Title = command.Title;
+
             _context.SaveChanges();
         }
     }

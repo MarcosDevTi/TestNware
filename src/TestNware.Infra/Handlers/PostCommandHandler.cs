@@ -53,16 +53,15 @@ namespace TestNware.Infra.Handlers
             }
 
             var category = _context.Categories.Find(command.CategoryId);
-            var updateCategory = new Post
-            {
-                Id = command.Id,
-                Title = command.Title,
-                Content = command.Content,
-                PublicationDate = command.PublicationDate,
-                Category = category
-            };
 
-            _context.Update(updateCategory);
+            var postUpdate = _context.Posts.Find(command.Id);
+
+            postUpdate.Id = command.Id;
+            postUpdate.Title = command.Title;
+            postUpdate.Content = command.Content;
+            postUpdate.PublicationDate = command.PublicationDate;
+            postUpdate.Category = category;
+
             _context.SaveChanges();
         }
     }

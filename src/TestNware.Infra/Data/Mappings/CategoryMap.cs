@@ -8,8 +8,7 @@ namespace TestNware.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.Property(p => p.Id).HasColumnType("uuid")
-                .IsRequired();
+            builder.Property(p => p.Id).HasColumnType("uuid").IsRequired();
 
             builder.Property(p => p.Title).IsRequired();
 
