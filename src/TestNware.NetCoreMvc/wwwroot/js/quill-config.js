@@ -57,7 +57,7 @@ function quillEstVide() {
         elementTextQuill.style['border-style'] = 'solid';
         elementTextQuill.style.border = '1px solid #ced4da';
         elementTextQuill.style['border-color'] = '#bd2426';
-        elementTexteErreur.innerHTML = '<span class="text-danger field-validation-error" data-valmsg-for="Texte" data-valmsg-replace="true"><span>Le champ \'Texte\' est requis.</span></span>';
+        elementTexteErreur.innerHTML = '<span class="text-danger field-validation-error" data-valmsg-for="Texte" data-valmsg-replace="true"><span>Le champ \'Content\' est requis.</span></span>';
     } else {
         elementTextQuill.style.removeProperty('border-style');
         elementTextQuill.style.removeProperty('border');
