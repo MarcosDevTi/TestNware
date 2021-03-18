@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8QvJ4a6cXhbLnK92nsHoN4PtYUlughZOJoUtVtY2L6xf9kubYPK8rWLIfJm+tS0SE/5JKLVTToVh26JhzzmKSA==",
+  "dgSpecHash": "lt4r3jaNJAhagtmTn+9biXnoLIG6IRjonogVE1Um3L8U25cY3cgWrrJDM+oLeqq/23fWhiJ+puZ0VFgGzjGtbA==",
   "success": true,
   "projectFilePath": "C:\\test\\TestNware\\src\\TestNware.MVC\\TestNware.MVC.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,8 @@
     "C:\\Users\\marco\\.nuget\\packages\\microsoft.extensions.primitives\\2.1.0\\microsoft.extensions.primitives.2.1.0.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\system.io.pipelines\\4.7.2\\system.io.pipelines.4.7.2.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
-    "C:\\Users\\marco\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+    "C:\\Users\\marco\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.11\\microsoft.netcore.app.host.linux-x64.3.1.11.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "711ckud+/xcEDfl7SXxebGubJBwLV5Xv1msxiIrsKUVfpOo22fStufCd3UR0rECpvhSipYaJATWQ9jZ5wgTHlQ==",
+  "dgSpecHash": "NwDaf8dfmSQI7lUdjog3wp6+mmMt1rqpajnhp8K3567KKTvAZSzB3nHeyx5OWBGeiU/FP1tI6lBC0s83c6loRw==",
   "success": true,
   "projectFilePath": "C:\\test\\TestNware\\src\\TestNware.API\\TestNware.API.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,8 @@
     "C:\\Users\\marco\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\system.io.pipelines\\4.7.2\\system.io.pipelines.4.7.2.nupkg.sha512",
-    "C:\\Users\\marco\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+    "C:\\Users\\marco\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.11\\microsoft.netcore.app.host.linux-x64.3.1.11.nupkg.sha512"
   ],
   "logs": []
 }
