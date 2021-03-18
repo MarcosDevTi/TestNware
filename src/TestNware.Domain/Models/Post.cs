@@ -10,5 +10,6 @@ namespace TestNware.Domain.Models
         public string Content { get; set; }
         public Category Category { get; set; }
         public Guid CategoryId { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
 }
