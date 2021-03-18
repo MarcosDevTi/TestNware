@@ -55,9 +55,7 @@ namespace TestNware.Infra.Handlers
 
         public async Task<Post> Handle(GetPost query)
         {
-            var result = await _context.Posts.FindAsync(query.Id);
-
-            return result;
+            return await _context.Posts.FindAsync(query.Id); ;
         }
     }
 }

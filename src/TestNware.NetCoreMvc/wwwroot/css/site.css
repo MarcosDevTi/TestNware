@@ -16,3 +16,8 @@
 .ql-editor {
     height: 120px !important;
 }
+
+
+.list-group a {
+    text-decoration: none;
+}

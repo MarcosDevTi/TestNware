@@ -41,7 +41,7 @@ namespace TestNware.Infra.Handlers
             if (_context.Categories.Any(c => c.Title == command.Title && c.Id != command.Id))
             {
 
-                _notificationContext.AddNotification(nameof(CreateCategory.Title), $"The {nameof(CreateCategory.Title)} '{command.Title}' already exists");
+                _notificationContext.AddNotification(nameof(EditCategory.Title), $"The {nameof(EditCategory.Title)} '{command.Title}' already exists");
                 return;
             }
 
