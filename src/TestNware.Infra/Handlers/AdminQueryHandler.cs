@@ -28,8 +28,7 @@ namespace TestNware.Infra.Handlers
                {
                    Id = p.Id,
                    Title = p.Title
-               }
-                   ).ToListAsync();
+               }).ToListAsync();
 
             var count = await _context.Posts.CountAsync();
             var paging = new Paging<PostItemAdmin>

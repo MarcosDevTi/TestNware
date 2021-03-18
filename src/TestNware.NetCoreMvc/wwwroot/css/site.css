@@ -21,3 +21,7 @@
 .list-group a {
     text-decoration: none;
 }
+
+#list-categories, #list-posts {
+    height: 250px;
+}
