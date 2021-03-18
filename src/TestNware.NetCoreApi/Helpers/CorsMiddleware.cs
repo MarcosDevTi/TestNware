@@ -16,7 +16,7 @@ namespace TestNware.Helpers
 
         public Task Invoke(HttpContext httpContext)
         {
-            CorsExtension.LiberarCorsDomain(httpContext.Response);
+            CorsExtension.CorsDomainFree(httpContext.Response);
             httpContext.Response.StatusCode = (int)HttpStatusCode.OK;
 
             if (httpContext.Request.Method.Equals("OPTIONS", StringComparison.CurrentCultureIgnoreCase))
