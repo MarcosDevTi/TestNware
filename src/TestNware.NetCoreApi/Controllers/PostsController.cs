@@ -17,7 +17,7 @@ namespace TestNware.Controllers
         public async Task<IActionResult> GetAsync([FromQuery] GetPosts posts) =>
             await GetListResultPaged(posts);
 
-        [HttpGet, Route("{id:guid}")]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> Get(Guid id) =>
             await GetFirstOrNotFound(new GetPost(id));
     }

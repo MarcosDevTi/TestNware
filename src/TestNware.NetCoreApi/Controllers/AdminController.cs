@@ -13,12 +13,12 @@ namespace TestNware.Controllers
     {
         public AdminController(IProcessor processor) : base(processor) { }
 
-        [HttpGet, Route("categories-admin")]
+        [HttpGet("categories-admin")]
         public async Task<IActionResult> GetCategories([FromQuery] GetCategories categories) =>
             await GetListResultPaged(categories);
 
-        [HttpGet, Route("posts-admin")]
-        public async Task<IActionResult> GetAsync([FromQuery] GetPostsAdmin posts) =>
+        [HttpGet("posts-admin")]
+        public async Task<IActionResult> GetPosts([FromQuery] GetPostsAdmin posts) =>
             await GetListResultPaged(posts);
     }
 

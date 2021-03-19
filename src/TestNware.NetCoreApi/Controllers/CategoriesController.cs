@@ -24,7 +24,7 @@ namespace TestNware.Controllers
             await GetFirstOrNotFound(new GetCategory(id));
 
 
-        [HttpGet, Route("{id:guid}/posts")]
+        [HttpGet("{id:guid}/posts")]
         public async Task<IActionResult> GetPosts(Guid id) =>
             await GetListResult(new GetPostByCategory(id));
     }
